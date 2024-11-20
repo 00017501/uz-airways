@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+    line-height: 1.1;
+    border: none;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+html {
+    font-size: 16px;
+    font-family: var(--primary-font-family);
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* Colors */
+    --purple-white: #f6f6fe;
+    --light-purple: #e9e8fc;
+    --primary-purple: #605dec;
+    --secondary-purple: #2a26d9;
+    --dark-purple: #1513a0;
+
+    --gray-100: #fafafa;
+    --gray-400: #7C8DB0;
+    --gray-600: #6e7491;
+    --gray-700: #52556f;
+    --gray-900: #27273f;
+    --semi-transparent-gray: rgba(203, 212, 230, 0.3);
+
+    --black: #333333;
+
+    --primary-white: #ffffff;
+
+    --primary-red: #eb5757;
+    --secondary-red: #e30000;
+
+    --primary-pink: #eb568c;
+    --secondary-pink: #ed5e76;
+
+    --yellow: #ffd12f;
+
+    --primary-green: #5cd6c0;
+    --secondary-green: #22c3a6;
+    --primary-dark-green: #009b7f;
+    --secondary-dark-green: #00b292;
+
+    /* Gradients */
+    --gradient-purple: linear-gradient(
+        45deg,
+        var(--primary-purple) 100%,
+        var(--secondary-purple) 100%
+    );
+    --gradient-green: linear-gradient(
+        45deg,
+        var(--primary-green) 100%,
+        var(--secondary-green) 100%
+    );
+
+    --gradient-pink: linear-gradient(
+        45deg,
+        var(--primary-pink) 100%,
+        var(--secondary-pink) 100%
+    );
+
+    /* Fonts */
+    --primary-font-family: "Nunito Sans", sans-serif;
+}

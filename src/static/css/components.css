@@ -1,0 +1,38 @@
+/* Base button */
+.btn {
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    transition: all 200ms ease;
+    border-width: 1px;
+    border-style: solid;
+    background-size: 20px; /* Adjust the size of the SVG */
+}
+
+/* Primary */
+.btn-primary {
+    background-color: var(--primary-purple);
+    color: var(--gray-100);
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-purple);
+}
+
+.btn-primary:disabled,
+.btn-primary.disabled {
+    border-color: var(--gray-400);
+    background-color: var(--semi-transparent-gray);
+    color: var(--gray-400);
+    cursor: not-allowed;
+}
+
+.btn.include-arrow {
+    color: white;
+    background-image: url("../../assets/icons/18/arrowRight.svg");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1rem) center;
+    padding: 1rem 2.2rem 1rem 1rem;
+    background-size: 1rem; /* Adjust the size of the SVG */
+    text-align: left; /* Align text to the left */
+}
