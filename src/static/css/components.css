@@ -1,18 +1,66 @@
-/* Base button */
+/* ------------------------ BUTTON STYLES ------------------------- */
+/* ------------------------ Base button styles ------------------------ */
 .btn {
     display: inline-block;
-    padding: 1rem;
+    padding: 0.75rem 1.25rem;
     border-radius: 0.25rem;
     transition: all 200ms ease;
     border-width: 1px;
     border-style: solid;
-    background-size: 20px; /* Adjust the size of the SVG */
+    background-size: 1rem;
+    font-size: 1rem;
 }
 
-/* Primary */
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn:disabled,
+.btn.disabled {
+    cursor: not-allowed;
+}
+
+.btn.disabled:hover,
+.btn:disabled:hover {
+    background-color: transparent !important;
+    cursor: not-allowed;
+}
+
+.btn.include-arrow:disabled,
+.btn.include-arrow.disabled {
+    background-image: url("../../assets/icons/18/GrayArrowRight.svg") !important;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1rem) center;
+    padding: 1rem 2.2rem 1rem 1rem;
+    text-align: left;
+}
+
+/* Button sizes */
+.btn-lg {
+    padding: 0.75rem 1.25rem;
+    font-size: 1.125rem;
+}
+
+.btn-md {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+}
+
+.btn-sm {
+    padding: 0.5625rem 1rem;
+    font-size: 1rem;
+}
+
+.btn-extra-sm {
+    font-size: 0.875rem;
+    padding: 0.53125rem 1rem;
+}
+
+/* ------------------------ Primary button styles ------------------------ */
 .btn-primary {
     background-color: var(--primary-purple);
     color: var(--gray-100);
+    border-color: var(--gray-100);
 }
 
 .btn-primary:hover {
@@ -22,17 +70,71 @@
 .btn-primary:disabled,
 .btn-primary.disabled {
     border-color: var(--gray-400);
-    background-color: var(--semi-transparent-gray);
-    color: var(--gray-400);
-    cursor: not-allowed;
+    background-color: var(--semi-transparent-gray) !important;
+    color: var(--gray-400) !important;
 }
 
-.btn.include-arrow {
-    color: white;
-    background-image: url("../../assets/icons/18/arrowRight.svg");
+.btn-primary.include-arrow,
+.btn-primary.include-arrow.destructive {
+    background-image: url("../../assets/icons/18/whiteArrowRight.svg");
     background-repeat: no-repeat;
     background-position: calc(100% - 1rem) center;
     padding: 1rem 2.2rem 1rem 1rem;
-    background-size: 1rem; /* Adjust the size of the SVG */
-    text-align: left; /* Align text to the left */
+    text-align: left;
+}
+
+.btn-primary.destructive {
+    background-color: var(--primary-red);
+    color: var(--gray-100);
+}
+
+/* ------------------------ Secondary button styles ------------------------ */
+.btn-secondary {
+    background-color: transparent;
+    border-color: var(--primary-purple);
+    color: var(--primary-purple);
+}
+
+.btn-secondary.include-arrow {
+    background-image: url("../../assets/icons/18/PurpleArrowRight.svg");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1rem) center;
+    padding: 1rem 2.2rem 1rem 1rem;
+    text-align: left;
+}
+
+.btn-secondary.destructive {
+    border-color: var(--primary-red);
+    color: var(--primary-red);
+}
+
+.btn-secondary.destructive.include-arrow {
+    background-image: url("../../assets/icons/18/redArrowRight.svg");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1rem) center;
+    padding: 1rem 2.2rem 1rem 1rem;
+    text-align: left;
+}
+
+.btn-secondary:hover {
+    background-color: var(--light-purple);
+}
+
+.btn-secondary.disabled,
+.btn-secondary:disabled {
+    border-color: var(--gray-400) !important;
+    color: var(--gray-400) !important;
+}
+
+.btn-secondary.destructive:hover {
+    background-color: transparent;
+}
+
+/* ------------------------ INPUT STYLES ----------------------------- */
+.form-input {
+    border-radius: 0.125rem;
+    border-width: 1px;
+    border-style: solid;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
 }

@@ -1,1 +1,4 @@
-console.log("Main.js loaded");
+import { applyUtils } from "./utils.js";
+
+// Apply the default utility functions
+applyUtils();
