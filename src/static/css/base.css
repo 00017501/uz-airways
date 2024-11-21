@@ -7,6 +7,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    list-style: none;
 }
 
 /* Prevent font size inflation */
@@ -109,7 +111,9 @@ html {
     --dark-purple: #1513a0;
 
     --gray-100: #fafafa;
-    --gray-400: #7C8DB0;
+    --gray-200: #cbd4e6;
+    --gray-300: #a1b0cc;
+    --gray-400: #7c8db0;
     --gray-600: #6e7491;
     --gray-700: #52556f;
     --gray-900: #27273f;
@@ -152,4 +156,72 @@ html {
 
     /* Fonts */
     --primary-font-family: "Nunito Sans", sans-serif;
+}
+
+/* FLEX STYLES */
+.d-flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+/* MARGINS */
+
+.m-auto {
+    margin: auto;
+}
+
+.mt-auto {
+    margin-top: auto;
+}
+
+.mb-auto {
+    margin-bottom: auto;
+}
+
+.ms-auto {
+    margin-left: auto;
+}
+
+.me-auto {
+    margin-right: auto;
+}
+
+/* GAPS */
+.gap-1 {
+    gap: 1rem;
+}
+
+.gap-2 {
+    gap: 2rem;
+}
+
+.gap-3 {
+    gap: 3rem;
+}
+
+.gap-4 {
+    gap: 4rem;
+}
+
+.gap-5 {
+    gap: 5rem;
 }

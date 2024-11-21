@@ -1,4 +1,4 @@
-/* ------------------------ BUTTON STYLES ------------------------- */
+/* ------------------------ BUTTON STYLES START------------------------- */
 /* ------------------------ Base button styles ------------------------ */
 .btn {
     display: inline-block;
@@ -130,11 +130,119 @@
     background-color: transparent;
 }
 
-/* ------------------------ INPUT STYLES ----------------------------- */
-.form-input {
-    border-radius: 0.125rem;
-    border-width: 1px;
+/* ------------------------ END OF BUTTON STYLES ------------------------ */
+
+/* ------------------------ INPUT STYLES START ----------------------------- */
+.form-control {
+    background-color: var(--primary-white);
+    border-radius: 0.25rem;
+    border-width: 0.125rem;
+    border-color: var(--gray-300);
     border-style: solid;
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 0.75rem;
     font-size: 1rem;
+    color: var(--gray-800);
+    transition: border-color 150ms ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border: solid 0.125rem var(--primary-purple);
+}
+
+.form-control::placeholder {
+    color: var(--gray-400);
+}
+
+.form-control:user-invalid,
+.form-control.invalid {
+    border-radius: 0.25rem;
+    background: linear-gradient(white, white) padding-box,
+        var(--gradient-pink) border-box;
+    border: 0.125rem solid transparent;
+}
+
+.form-feedback {
+    font-size: 0.75rem;
+    margin-block: 0.125rem;
+    display: block;
+    color: var(--gray-400);
+}
+
+.form-control.invalid ~ .form-feedback-wrapper > .form-feedback {
+    color: var(--primary-red) !important;
+}
+
+/* ------------------------ END OF INPUT STYLES ----------------------------- */
+
+/* ------------------------ LINK STYLES START ----------------------------- */
+
+.link {
+    color: var(--gray-400) !important;
+    font-size: 1rem;
+}
+
+.link:hover,
+.link.active {
+    color: var(--primary-purple) !important;
+}
+
+/* ------------------------ END LINK STYLES ----------------------------- */
+
+/* DROPDOWN */
+.custom-select {
+    position: relative;
+    font-family: Arial;
+}
+
+.custom-select select {
+    display: none; /*hide original SELECT element: */
+    padding: 0.5rem;
+}
+
+.select-items div {
+    padding: 0.5rem;
+    color: var(--gray-900);
+}
+
+.select-selected {
+    color: var(--gray-400);
+    border-style: solid;
+    border-color: var(--gray-200);
+    border-width: 0.125rem;
+    padding: 0.75rem 0.75rem;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+    cursor: pointer;
+    margin-block: 0.125rem;
+    padding: 0.75rem 0.75rem;
+    font-size: 1rem;
+}
+
+/* Style items (options): */
+.select-items {
+    position: absolute;
+    padding: 0.75rem;
+    background-color: var(--primary-white);
+    color: var(--gray-900);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: var(--primary-purple);
+    color: var(--primary-white) !important;
+    border-radius: 0.25rem;
 }

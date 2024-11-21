@@ -1,4 +1,5 @@
-import { applyUtils } from "./utils.js";
+import { autoSetButtonTitle, enableCustomDropdownBehavior } from "./utils.js";
 
 // Apply the default utility functions
-applyUtils();
+autoSetButtonTitle();
+enableCustomDropdownBehavior();

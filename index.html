@@ -1,14 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title of the page</title>
-    <link rel="stylesheet" href="./src/static/css/main.css">
-</head>
-<body>
-    <button class="btn btn-primary">Download the file</button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Title of the page</title>
+        <link rel="stylesheet" href="./src/static/css/main.css" />
+    </head>
+    <body>
+        <nav>
+            <div
+                class="container d-flex justify-content-between align-items-center">
+                <h1>Uz Airways</h1>
+                <ul class="d-flex gap-1 align-items-center">
+                    <li><a class="link" href="#">Some</a></li>
+                    <li><a class="link" href="#">Some</a></li>
+                    <li><a class="link" href="#">Some</a></li>
+                    <li><a class="link" href="#">Some</a></li>
+                    <li>
+                        <button class="btn btn-primary btn-md">Sign Up</button>
+                    </li>
+                    <li></li>
+                </ul>
+            </div>
+        </nav>
 
-    <script type="module" src="./src/static/js/main.js"></script>
-</body>
+        <main class="d-flex flex-column justify-content-center">
+            <h1 class="banner-text">It's more than just a trip</h1>
+            <div class="input-list d-flex justify-content-center">
+                <div class="custom-select" style="width: 200px">
+                    <select>
+                        <option value="0">From where?</option>
+                        <option value="1">Audi</option>
+                        <option value="2">BMW</option>
+                        <option value="3">Citroen</option>
+                        <option value="4">Ford</option>
+                        <option value="5">Honda</option>
+                        <option value="6">Jaguar</option>
+                        <option value="7">Land Rover</option>
+                        <option value="8">Mercedes</option>
+                        <option value="9">Mini</option>
+                        <option value="10">Nissan</option>
+                        <option value="11">Toyota</option>
+                        <option value="12">Volvo</option>
+                    </select>
+                </div>
+                <div class="custom-select" style="width: 200px">
+                    <select>
+                        <option value="0">Where to?</option>
+                        <option value="1">Audi</option>
+                        <option value="2">BMW</option>
+                        <option value="3">Citroen</option>
+                        <option value="4">Ford</option>
+                        <option value="5">Honda</option>
+                        <option value="6">Jaguar</option>
+                        <option value="7">Land Rover</option>
+                        <option value="8">Mercedes</option>
+                        <option value="9">Mini</option>
+                        <option value="10">Nissan</option>
+                        <option value="11">Toyota</option>
+                        <option value="12">Volvo</option>
+                    </select>
+                </div>
+                <div class="custom-select" style="width: 200px">
+                    <select>
+                        <option value="0">Depart - Return</option>
+                        <option value="1">Audi</option>
+                        <option value="2">BMW</option>
+                        <option value="3">Citroen</option>
+                        <option value="4">Ford</option>
+                        <option value="5">Honda</option>
+                        <option value="6">Jaguar</option>
+                        <option value="7">Land Rover</option>
+                        <option value="8">Mercedes</option>
+                        <option value="9">Mini</option>
+                        <option value="10">Nissan</option>
+                        <option value="11">Toyota</option>
+                        <option value="12">Volvo</option>
+                    </select>
+                </div>
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Depart - Return" />
+                <input type="text" class="form-control" placeholder="1 adult" />
+                <button class="btn btn-primary btn-lg">Search</button>
+            </div>
+        </main>
+
+        <script type="module" src="./src/static/js/main.js"></script>
+    </body>
 </html>

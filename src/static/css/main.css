@@ -3,3 +3,61 @@
 
 /* Components */
 @import url("./components.css");
+
+.container {
+    width: calc(100% - 4rem);
+    height: 100%;
+    margin-inline: auto;
+}
+
+nav {
+    height: 6rem;
+}
+
+.banner-text {
+    font-size: 6rem;
+    text-align: center;
+    padding-inline: 20%;
+    background-image: url("../../assets/background-mask-gradient.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    -webkit-font-smoothing: antialiased;
+}
+
+main {
+    background-image: url("../../assets/world-map.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 6rem);
+}
+
+.input-list {
+    padding-block: 6rem;
+}
+
+.input-list > div {
+    border-color: var(--gray-200) !important;
+}
+
+.input-list > div:not(:last-of-type) {
+    border-right: none !important;
+}
+
+.input-list > div:first-of-type {
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.input-list > div:last-of-type {
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+.input-list > div:not(:first-of-type):not(:last-of-type) {
+    border-radius: 0 !important;
+}
