@@ -189,60 +189,210 @@
 
 /* ------------------------ END LINK STYLES ----------------------------- */
 
-/* DROPDOWN */
-.custom-select {
+/* CARD STYLES */
+
+.card {
     position: relative;
-    font-family: Arial;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.custom-select select {
-    display: none; /*hide original SELECT element: */
-    padding: 0.5rem;
+.card .card-image-wrapper {
+    overflow: hidden;
+    width: 100%;
 }
 
-.select-items div {
-    padding: 0.5rem;
-    color: var(--gray-900);
+.card.card-sm .card-image-wrapper {
+    height: 25rem;
 }
 
-.select-selected {
+.card.card-sm .card-image-wrapper {
+    height: 15rem;
+}
+
+.card .card-image {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    object-position: center;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.card .card-text {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+.card.card-sm .card-text {
+    flex-direction: column;
+}
+
+.card.card-lg {
+    width: 25rem;
+}
+
+.card.card-sm {
+    width: 15rem;
+}
+
+.card.card-image-bottom {
+    flex-direction: column-reverse;
+}
+
+.card.card-image-top {
+    flex-direction: column;
+}
+
+.card .card-title,
+.card .card-text-price {
+    color: var(--gray-600);
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.card .card-description {
     color: var(--gray-400);
-    border-style: solid;
-    border-color: var(--gray-200);
-    border-width: 0.125rem;
-    padding: 0.75rem 0.75rem;
-}
-
-/* style the items (options), including the selected item: */
-.select-items div,
-.select-selected {
-    cursor: pointer;
-    margin-block: 0.125rem;
-    padding: 0.75rem 0.75rem;
     font-size: 1rem;
+    font-size: 400;
 }
 
-/* Style items (options): */
-.select-items {
-    position: absolute;
-    padding: 0.75rem;
-    background-color: var(--primary-white);
-    color: var(--gray-900);
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 99;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Hide the items when the select box is closed: */
-.select-hide {
+.card.card-sm .card-description {
     display: none;
 }
 
-.select-items div:hover,
-.same-as-selected {
-    background-color: var(--primary-purple);
-    color: var(--primary-white) !important;
-    border-radius: 0.25rem;
+.card:hover {
+    cursor: pointer;
+    .card-image {
+        transform: scale(1.2);
+    }
+}
+
+.card-link {
+    color: var(--primary-purple);
+}
+
+.card.card-lg .card-text-detail {
+    width: 80% !important;
+}
+
+.card.card-lg .card-text-price > span {
+    display: none;
+}
+
+.card.card-sm .card-text-price {
+    color: var(--gray-400);
+    font-size: 1rem;
+    font-size: 400;
+}
+
+/* END OF CARD STYLES */
+
+/* START OF TABLE STYLES */
+.flights-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--light-purple);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.flights-table tr td {
+    transition: all 150ms ease;
+}
+
+.flights-table tr > th,
+.flights-table tr > td {
+    min-width: 10rem;
+    padding-inline: 2.5rem;
+    padding-block: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--light-purple);
+}
+
+.flights-table tr:last-child > td {
+    border-bottom: none;
+}
+
+.flights-table thead tr > th {
+    border-bottom: 1px solid var(--light-purple);
+    font-weight: bold;
+}
+
+.flights-table tbody td .data-title {
+    color: var(--gray-900);
+    font-size: 1rem;
+}
+
+.flights-table tbody td .data-subtitle {
+    color: var(--gray-400);
+    font-size: 1rem;
+}
+.flights-table .row-image {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+}
+
+.flights-table tr:hover td {
+    background-color: var(--light-purple);
+}
+
+/* PRICES TABLE */
+.prices-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.prices-table th,
+.prices-table td {
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.prices-table th {
+    background-color: var(--purple-white);
+    font-weight: 600;
+}
+
+.prices-table th:first-child,
+.prices-table td:first-child {
+    text-align: left;
+    background-color: var(--purple-white);
+    font-weight: 600;
+}
+
+.prices-table tr:last-child td {
+    border-bottom: none;
+}
+
+.prices-table tbody tr:hover {
+    background-color: var(--purple-white);
+}
+
+.prices-table tbody tr:hover td:first-child {
+    background-color: var(--purple-white);
+}
+
+.section-header h1 {
+    color: var(--gray-700);
+    font-size: 1.5rem;
+}
+
+.section-header a span {
+    color: var(--gray-300);
+    font-size: 1.5rem;
 }
