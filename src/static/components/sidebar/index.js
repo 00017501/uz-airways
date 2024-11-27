@@ -1,4 +1,27 @@
+import { getPageInfo } from "../../js/utils.js";
+
+const pageInfo = getPageInfo();
+
 export default function SideBar() {
+    const staticNavLinks = {
+        "destinations.html": "Destinations",
+        "#": "Some link",
+        "##": "Another link",
+    };
+
+    let linkListItems = ``;
+
+    for (const [key, value] of Object.entries(staticNavLinks)) {
+        linkListItems += `
+        <li>
+            <a data-page-href class="link ${
+                pageInfo.isPage(key) ? "active" : ""
+            }" href="pages/${key}"
+                >${value}</a
+            >
+        </li>`;
+    }
+
     const sideBarHTML = `
     <div class="overflow-controller">
         <aside id="sidebar">
@@ -8,14 +31,7 @@ export default function SideBar() {
                     <img data-src src="assets/icons/32/x close no.svg" alt="" />
                 </button>
                 <ul>
-                    <li>
-                        <a data-page-href class="link" href="pages/destinations.html"
-                            >Destinations</a
-                        >
-                    </li>
-                    <li><a class="link" href="#">Some</a></li>
-                    <li><a class="link" href="#">Some</a></li>
-                    <li><a class="link" href="#">Some</a></li>
+                    ${linkListItems}
                 </ul>
             </div>
         </aside>

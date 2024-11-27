@@ -1,30 +1,23 @@
 // File that contains the components related to the Welcome page
 
-// import CardManager from "./../../../js/store/card.js";
 import CardManager from "../../js/store/card.js";
 import Card from "../../components/card/index.js";
 import SectionHeader from "../../components/header/index.js";
 import { SpinnerLoader } from "../../components/loader/index.js";
-
+import AssetPathManager from "../assetsUrlManager.js";
 const cardManager = new CardManager();
 
 const addDefaultCardToDOM = () => {
     let pageContent = document.querySelector("#page-content");
-
     const loader = SpinnerLoader("Loading Cards...");
-
-    // Add the loader to the page
     pageContent.appendChild(loader);
 
-    // Imitating the loading process
     setTimeout(() => {
-        // Add the default cards to the Local Storage
         cardManager.initializeDefaultCards();
-
-        // Remove the loader after the timeout
         pageContent.removeChild(loader);
 
         const { sections } = cardManager.getAllCards();
+        const assetManager = new AssetPathManager();
 
         for (let section of sections) {
             const cardsHeader = SectionHeader(
@@ -34,9 +27,14 @@ const addDefaultCardToDOM = () => {
                 section.redirectLink
             );
 
-            let cardsInnerHtml = "";
+            const sectionWrapper = document.createElement("section");
+            sectionWrapper.appendChild(cardsHeader);
+
+            const cardGrid = document.createElement("div");
+            cardGrid.className = "card-grid";
+
             section.cards.forEach((card) => {
-                cardsInnerHtml += Card(
+                const cardElement = Card(
                     card.cardDetailLink,
                     card.cardSize,
                     card.imageLink,
@@ -44,18 +42,15 @@ const addDefaultCardToDOM = () => {
                     card.description,
                     card.price
                 );
+                cardGrid.appendChild(cardElement);
             });
 
-            const sectionWrapper = document.createElement("section");
-            sectionWrapper.appendChild(cardsHeader);
-
-            const cardGrid = document.createElement("div");
-            cardGrid.className = "card-grid";
-            cardGrid.innerHTML = cardsInnerHtml;
             sectionWrapper.appendChild(cardGrid);
-
             pageContent.appendChild(sectionWrapper);
         }
+
+        // Update paths after all cards are added
+        assetManager.execute();
     }, 3000);
 };
 

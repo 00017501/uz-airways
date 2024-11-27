@@ -13,6 +13,10 @@ class AssetPathManager {
     }
 
     getAssetPath(imageName) {
+        // Check if the path already starts with src/ or the base path
+        if (imageName.startsWith('src/') || imageName.startsWith(this.basePath)) {
+            return imageName;
+        }
         return this.currentPath + this.basePath + imageName;
     }
 

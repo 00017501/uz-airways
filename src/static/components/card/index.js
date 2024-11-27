@@ -11,25 +11,21 @@ export default function Card(
     description,
     price
 ) {
-    return `
-    <a href="${cardDetailLink}">
-            <figure class="card card-image-top card-${
-                cardSize || CardSizes.BIG
-            }">
+    const cardWrapper = document.createElement("div");
+    cardWrapper.innerHTML = `
+        <a data-page-href href="pages/${cardDetailLink}">
+            <figure class="card card-image-top card-${cardSize || "lg"}">
                 <div class="card-image-wrapper">
                     <img
+                        data-src
                         class="card-image"
-                        src="${imageLink}"
+                        src="assets/${imageLink}"
                         alt="City view" />
                 </div>
                 <figcaption class="card-text">
                     <div class="card-text-detail overflow-hidden">
-                        <h1 class="card-title overflow-ellipsis">
-                            ${title}
-                        </h1>
-                        <p class="card-description overflow-ellipsis">
-                            ${description}
-                        </p>
+                        <h1 class="card-title overflow-ellipsis">${title}</h1>
+                        <p class="card-description overflow-ellipsis">${description}</p>
                     </div>
                     <h2 class="card-text-price">
                         <span>Flights from </span>$${price}
@@ -38,4 +34,5 @@ export default function Card(
             </figure>
         </a>
     `;
+    return cardWrapper.firstElementChild;
 }
