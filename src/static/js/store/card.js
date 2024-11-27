@@ -9,41 +9,124 @@ class DestinationCardManager {
 
     // Default cards data
     getDefaultCards() {
-        return [
-            {
-                id: "dest-001",
-                cardDetailLink: "/flights/new-york",
-                cardSize: "lg",
-                imageLink: "https://example.com/images/new-york.jpg",
-                title: "New York City Weekend Getaway",
-                description:
-                    "Experience the magic of NYC with our special weekend packages including Broadway shows and city tours",
-                price: 299.99,
-                tags: ["Popular", "Weekend Special"],
-            },
-            {
-                id: "dest-002",
-                cardDetailLink: "/flights/paris",
-                cardSize: "lg",
-                imageLink: "https://example.com/images/paris.jpg",
-                title: "Paris Explorer Package",
-                description:
-                    "7 days in the City of Light with guided tours and Seine River cruise",
-                price: 899.99,
-                tags: ["Featured", "Most Booked"],
-            },
-            {
-                id: "dest-003",
-                cardDetailLink: "/flights/tokyo",
-                cardSize: "lg",
-                imageLink: "https://example.com/images/tokyo.jpg",
-                title: "Tokyo Adventure",
-                description:
-                    "Explore the vibrant culture of Tokyo with our guided city tours",
-                price: 1099.99,
-                tags: ["New", "Cultural"],
-            },
-        ];
+        return {
+            sections: [
+                {
+                    title: "Find your next adventure with these flight deals",
+                    keyWords: "flight deals",
+                    redirectLink: "/destinations",
+                    keyColor: "purple",
+                    cards: [
+                        {
+                            id: "1",
+                            cardDetailLink: "/destinations#new-york",
+                            cardSize: "lg",
+                            imageLink:
+                                "./src/assets/wonderful_places/pexels-baskincreativeco-1766838.jpg",
+                            title: "New York City Weekend Getaway",
+                            description:
+                                "Experience the magic of NYC with our special weekend packages including Broadway shows and city tours",
+                            price: 299.99,
+                            tags: ["Popular", "Weekend Special"],
+                        },
+                        {
+                            id: "2",
+                            cardDetailLink: "/destinations#paris",
+                            cardSize: "lg",
+                            imageLink:
+                                "./src/assets/wonderful_places/pexels-david-besh-884788.jpg",
+                            title: "Paris Explorer Package",
+                            description:
+                                "7 days in the City of Light with guided tours and Seine River cruise",
+                            price: 899.99,
+                            tags: ["Featured", "Most Booked"],
+                        },
+                        {
+                            id: "3",
+                            cardDetailLink: "/destinations#tokyo",
+                            cardSize: "lg",
+                            imageLink:
+                                "./src/assets/wonderful_places/pexels-fotios-photos-1921336.jpg",
+                            title: "Tokyo Adventure",
+                            description:
+                                "Explore the vibrant culture of Tokyo with our guided city tours",
+                            price: 1099.99,
+                            tags: ["New", "Cultural"],
+                        },
+                        {
+                            id: "4",
+                            cardDetailLink: "/destinations#tashkent",
+                            cardSize: "lg",
+                            imageLink:
+                                "./src/assets/wonderful_places/pexels-pixabay-459203.jpg",
+                            title: "Tokyo Adventure",
+                            description:
+                                "Explore the vibrant culture of Tokyo with our guided city tours",
+                            price: 1099.99,
+                            tags: ["New", "Cultural"],
+                        },
+                    ],
+                },
+
+
+                {
+                    title: "Explore unique places to stay",
+                    keyWords: "places to stay",
+                    redirectLink: "/unique-destinations",
+                    keyColor: "green",
+                    cards: [
+                        {
+                            id: "1",
+                            cardDetailLink: "/destinations#new-york",
+                            cardSize: "lg",
+                            imageLink:
+                                "./src/assets/wonderful_places/pexels-baskincreativeco-1766838.jpg",
+                            title: "New York City Weekend Getaway",
+                            description:
+                                "Experience the magic of NYC with our special weekend packages including Broadway shows and city tours",
+                            price: 299.99,
+                            tags: ["Popular", "Weekend Special"],
+                        },
+                        {
+                            id: "2",
+                            cardDetailLink: "/destinations#paris",
+                            cardSize: "lg",
+                            imageLink:
+                                "./src/assets/wonderful_places/pexels-david-besh-884788.jpg",
+                            title: "Paris Explorer Package",
+                            description:
+                                "7 days in the City of Light with guided tours and Seine River cruise",
+                            price: 899.99,
+                            tags: ["Featured", "Most Booked"],
+                        },
+                        {
+                            id: "3",
+                            cardDetailLink: "/destinations#tokyo",
+                            cardSize: "lg",
+                            imageLink:
+                                "./src/assets/wonderful_places/pexels-fotios-photos-1921336.jpg",
+                            title: "Tokyo Adventure",
+                            description:
+                                "Explore the vibrant culture of Tokyo with our guided city tours",
+                            price: 1099.99,
+                            tags: ["New", "Cultural"],
+                        },
+                        {
+                            id: "4",
+                            cardDetailLink: "/destinations#tashkent",
+                            cardSize: "lg",
+                            imageLink:
+                                "./src/assets/wonderful_places/pexels-pixabay-459203.jpg",
+                            title: "Tokyo Adventure",
+                            description:
+                                "Explore the vibrant culture of Tokyo with our guided city tours",
+                            price: 1099.99,
+                            tags: ["New", "Cultural"],
+                        },
+                    ],
+                },
+            ],
+        };
     }
 
     // Initialize storage with default cards
@@ -77,10 +160,10 @@ class DestinationCardManager {
     // READ
     getAllCards() {
         try {
-            return JSON.parse(localStorage.getItem(this.storageKey) || "[]");
+            return JSON.parse(localStorage.getItem(this.storageKey) || "{}");
         } catch (error) {
             console.error("Error getting cards:", error);
-            return [];
+            return {};
         }
     }
 

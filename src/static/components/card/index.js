@@ -11,11 +11,11 @@ export default function Card(
     description,
     price
 ) {
-   return `
+    return `
     <a href="${cardDetailLink}">
             <figure class="card card-image-top card-${
                 cardSize || CardSizes.BIG
-            } m-5">
+            }">
                 <div class="card-image-wrapper">
                     <img
                         class="card-image"

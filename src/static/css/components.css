@@ -195,8 +195,8 @@
     position: relative;
     overflow: hidden;
     display: flex;
+    margin-bottom: 1rem;
     flex-direction: column;
-    width: 25rem;
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -207,7 +207,7 @@
     width: 100%;
 }
 
-.card.card-sm .card-image-wrapper {
+.card.card-lg .card-image-wrapper {
     height: 25rem;
 }
 
@@ -236,14 +236,6 @@
 }
 .card.card-sm .card-text {
     flex-direction: column;
-}
-
-.card.card-lg {
-    width: 25rem;
-}
-
-.card.card-sm {
-    width: 15rem;
 }
 
 .card.card-image-bottom {
@@ -395,4 +387,51 @@
 .section-header a span {
     color: var(--gray-300);
     font-size: 1.5rem;
+}
+
+.loader-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem;
+}
+
+.loader-wrapper span {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: var(--gray-400);
+}
+
+.loader {
+    border: 0.5rem solid var(--primary-purple);
+    border-left-color: transparent;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#burger-menu,
+#close-menu {
+    background-color: transparent;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 100ms ease;
+    cursor: pointer;
+    display: none;
+}
+
+#burger-menu:hover,
+#close-menu:hover {
+    background-color: var(--light-purple);
 }
