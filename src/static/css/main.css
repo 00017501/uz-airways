@@ -130,7 +130,14 @@ main {
         padding-inline: 5%;
     }
 
-    #sidebar{
+    #sidebar {
+        right: -100%;
         width: 100%;
+    }
+
+    .section-header h1,
+    .section-header span {
+        font-size: 1.2rem;
+        text-align: center;
     }
 }

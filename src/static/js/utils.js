@@ -1,9 +1,12 @@
+import Navbar from "../components/navbar/index.js";
+import SideBar from "../components/sidebar/index.js";
+import AssetPathManager from "./assetsUrlManager.js";
 /**
  * Applies utility functions to enhance button elements.
  * This function selects all the buttons in the document
  * and sets their title attribute based on their text content.
  */
-export function autoSetButtonTitle() {
+export function useAutoSetButtonTitle() {
     // Select all the buttons in the document
     const buttons = document.querySelectorAll("button");
 
@@ -18,4 +21,46 @@ export function autoSetButtonTitle() {
             button.setAttribute("title", buttonText);
         }
     });
+}
+/**
+ * Attached the content (HTML code) that is shared
+ * by multiple pages. For example: `Navbar`, `Footer`, `Side Bar`
+ */
+export function useSharedComponents() {
+    // Add side bar and navbar to the top of the body element
+    Navbar();
+    SideBar();
+}
+
+/**
+ * Utility function to get current page information
+ */
+export function getPageInfo() {
+    const locationInfo = {
+        fullUrl: window.location.href, // Complete URL
+        pathname: window.location.pathname, // Path without domain
+        page: window.location.pathname.split("/").pop() || "index.html", // Current page name
+        hash: window.location.hash, // URL hash/fragment
+        search: window.location.search, // Query parameters
+        hostname: window.location.hostname, // Domain name
+    };
+
+    return {
+        location: locationInfo,
+
+        isPage: (pageName) => {
+            const currentPage = locationInfo.page.toLowerCase();
+            return currentPage === pageName.toLowerCase();
+        },
+
+        getQueryParam: (param) => {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        },
+    };
+}
+
+export function applyDynamicPaths() {
+    const dynamicUrlManager = new AssetPathManager();
+    dynamicUrlManager.execute();
 }

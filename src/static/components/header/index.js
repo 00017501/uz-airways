@@ -1,19 +1,18 @@
+import AssetPathManager from "../../js/assetsUrlManager.js";
 export default function SectionHeader(title, keyWords, keyColor, redirectLink) {
-    // Create the main wrapper
     const sectionHeader = document.createElement("div");
     sectionHeader.className =
-        "section-header d-flex justify-content-between mt-3 mb-3";
+        "section-header d-flex justify-content-between mt-3 mb-1";
 
-    // Create and append header 1
     const h1 = document.createElement("h1");
     h1.appendChild(formatTitle(title, keyWords, keyColor));
     sectionHeader.appendChild(h1);
 
-    // if redirectLink exists, create and append link
     if (redirectLink) {
         const link = document.createElement("a");
-        link.href = redirectLink;
         link.className = "d-flex align-items-center";
+        link.setAttribute("data-page-href", redirectLink);
+        link.href = "pages" + redirectLink;
 
         const span = document.createElement("span");
         span.textContent = "All";
@@ -22,14 +21,17 @@ export default function SectionHeader(title, keyWords, keyColor, redirectLink) {
         const img = document.createElement("img");
         img.width = 25;
         img.height = 25;
-        img.src = "./src/assets/icons/18/GrayArrowRight.svg";
+        img.setAttribute("data-src", "icons/18/GrayArrowRight.svg");
+        img.src = "assets/icons/18/GrayArrowRight.svg";
         img.alt = "";
         link.appendChild(img);
 
         sectionHeader.appendChild(link);
     }
 
-    return sectionHeader;
+    // Update paths immediately before returning
+    const assetManager = new AssetPathManager();
+    return assetManager.updateSectionHeader(sectionHeader);
 }
 
 /**
@@ -67,4 +69,3 @@ const formatTitle = (mainText, keyWords, keyColor) => {
 
     return fragment;
 };
-

@@ -14,12 +14,12 @@ class DestinationCardManager {
                 {
                     title: "Find your next adventure with these flight deals",
                     keyWords: "flight deals",
-                    redirectLink: "/destinations",
+                    redirectLink: "/destinations.html",
                     keyColor: "purple",
                     cards: [
                         {
                             id: "1",
-                            cardDetailLink: "/destinations#new-york",
+                            cardDetailLink: "/destinations.html#new-york",
                             cardSize: "lg",
                             imageLink:
                                 "./src/assets/wonderful_places/pexels-baskincreativeco-1766838.jpg",
@@ -31,7 +31,7 @@ class DestinationCardManager {
                         },
                         {
                             id: "2",
-                            cardDetailLink: "/destinations#paris",
+                            cardDetailLink: "/destinations.html#paris",
                             cardSize: "lg",
                             imageLink:
                                 "./src/assets/wonderful_places/pexels-david-besh-884788.jpg",
@@ -43,7 +43,7 @@ class DestinationCardManager {
                         },
                         {
                             id: "3",
-                            cardDetailLink: "/destinations#tokyo",
+                            cardDetailLink: "/destinations.html#tokyo",
                             cardSize: "lg",
                             imageLink:
                                 "./src/assets/wonderful_places/pexels-fotios-photos-1921336.jpg",
@@ -55,7 +55,7 @@ class DestinationCardManager {
                         },
                         {
                             id: "4",
-                            cardDetailLink: "/destinations#tashkent",
+                            cardDetailLink: "/destinations.html#tashkent",
                             cardSize: "lg",
                             imageLink:
                                 "./src/assets/wonderful_places/pexels-pixabay-459203.jpg",
@@ -77,7 +77,7 @@ class DestinationCardManager {
                     cards: [
                         {
                             id: "1",
-                            cardDetailLink: "/destinations#new-york",
+                            cardDetailLink: "/destinations.html#new-york",
                             cardSize: "lg",
                             imageLink:
                                 "./src/assets/wonderful_places/pexels-baskincreativeco-1766838.jpg",
@@ -89,7 +89,7 @@ class DestinationCardManager {
                         },
                         {
                             id: "2",
-                            cardDetailLink: "/destinations#paris",
+                            cardDetailLink: "/destinations.html#paris",
                             cardSize: "lg",
                             imageLink:
                                 "./src/assets/wonderful_places/pexels-david-besh-884788.jpg",
@@ -101,7 +101,7 @@ class DestinationCardManager {
                         },
                         {
                             id: "3",
-                            cardDetailLink: "/destinations#tokyo",
+                            cardDetailLink: "/destinations.html#tokyo",
                             cardSize: "lg",
                             imageLink:
                                 "./src/assets/wonderful_places/pexels-fotios-photos-1921336.jpg",
@@ -113,7 +113,7 @@ class DestinationCardManager {
                         },
                         {
                             id: "4",
-                            cardDetailLink: "/destinations#tashkent",
+                            cardDetailLink: "/destinations.html#tashkent",
                             cardSize: "lg",
                             imageLink:
                                 "./src/assets/wonderful_places/pexels-pixabay-459203.jpg",
