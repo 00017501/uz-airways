@@ -68,7 +68,6 @@ class DestinationCardManager {
                     ],
                 },
 
-
                 {
                     title: "Explore unique places to stay",
                     keyWords: "places to stay",

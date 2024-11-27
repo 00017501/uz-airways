@@ -14,6 +14,10 @@ nav {
     height: 6rem;
 }
 
+nav h1 a{
+    color: var(--primary-purple);
+}
+
 .banner-text {
     font-size: 6rem;
     text-align: center;
