@@ -13,13 +13,12 @@ export default function Card(
 ) {
     const cardWrapper = document.createElement("div");
     cardWrapper.innerHTML = `
-        <a data-page-href href="pages/${cardDetailLink}">
+        <a href="/${cardDetailLink}">
             <figure class="card card-image-top card-${cardSize || "lg"}">
                 <div class="card-image-wrapper">
                     <img
-                        data-src
                         class="card-image"
-                        src="assets/${imageLink}"
+                        src="${imageLink}"
                         alt="City view" />
                 </div>
                 <figcaption class="card-text">

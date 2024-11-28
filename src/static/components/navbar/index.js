@@ -14,9 +14,9 @@ export default function Navbar() {
     for (const [key, value] of Object.entries(staticNavLinks)) {
         linkListItems += `
         <li>
-            <a data-page-href class="link ${
+            <a class="link ${
                 pageInfo.isPage(key) ? "active" : ""
-            }" href="pages/${key}"
+            }" href="${key}"
                 >${value}</a
             >
         </li>`;
@@ -27,10 +27,10 @@ export default function Navbar() {
         <div
             class="container d-flex justify-content-between align-items-center">
             <h1>
-            <a href="../../index.html">Uz Airways</a>
+            <a href="index.html">Uz Airways</a>
             </h1>
             <button id="burger-menu">
-                <img data-src src="assets/icons/32/menu.svg" alt="" />
+                <img src="./src/assets/icons/32/menu.svg" alt="" />
             </button>
             <ul class="d-flex gap-1 align-items-center">
                 ${linkListItems}

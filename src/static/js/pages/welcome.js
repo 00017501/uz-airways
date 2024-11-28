@@ -8,7 +8,7 @@ import AssetPathManager from "../assetsUrlManager.js";
 const cardManager = new CardManager();
 
 const addDefaultCardToDOM = () => {
-    let pageContent = document.querySelector("#page-content");
+    let pageContent = document.querySelector(".page-content");
     const loader = SpinnerLoader("Loading Cards...");
     pageContent.appendChild(loader);
 

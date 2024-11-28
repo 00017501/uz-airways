@@ -14,9 +14,9 @@ export default function SideBar() {
     for (const [key, value] of Object.entries(staticNavLinks)) {
         linkListItems += `
         <li>
-            <a data-page-href class="link ${
+            <a class="link ${
                 pageInfo.isPage(key) ? "active" : ""
-            }" href="pages/${key}"
+            }" href="${key}"
                 >${value}</a
             >
         </li>`;
@@ -28,7 +28,7 @@ export default function SideBar() {
             <div
                 class="side-wrapper d-flex justify-content-center align-items-center">
                 <button id="close-menu">
-                    <img data-src src="assets/icons/32/x close no.svg" alt="" />
+                    <img src="./src/assets/icons/32/x close no.svg" alt="" />
                 </button>
                 <ul>
                     ${linkListItems}

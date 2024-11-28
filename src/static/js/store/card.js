@@ -22,7 +22,7 @@ class DestinationCardManager {
                             cardDetailLink: "destinations.html#new-york",
                             cardSize: "lg",
                             imageLink:
-                                "wonderful_places/pexels-baskincreativeco-1766838.jpg",
+                                "./src/assets/wonderful_places/pexels-baskincreativeco-1766838.jpg",
                             title: "New York City Weekend Getaway",
                             description:
                                 "Experience the magic of NYC with our special weekend packages including Broadway shows and city tours",
@@ -34,7 +34,7 @@ class DestinationCardManager {
                             cardDetailLink: "destinations.html#paris",
                             cardSize: "lg",
                             imageLink:
-                                "wonderful_places/pexels-david-besh-884788.jpg",
+                                "./src/assets/wonderful_places/pexels-david-besh-884788.jpg",
                             title: "Paris Explorer Package",
                             description:
                                 "7 days in the City of Light with guided tours and Seine River cruise",
@@ -46,7 +46,7 @@ class DestinationCardManager {
                             cardDetailLink: "destinations.html#tokyo",
                             cardSize: "lg",
                             imageLink:
-                                "wonderful_places/pexels-fotios-photos-1921336.jpg",
+                                "./src/assets/wonderful_places/pexels-fotios-photos-1921336.jpg",
                             title: "Tokyo Adventure",
                             description:
                                 "Explore the vibrant culture of Tokyo with our guided city tours",
@@ -58,7 +58,7 @@ class DestinationCardManager {
                             cardDetailLink: "destinations.html#tashkent",
                             cardSize: "lg",
                             imageLink:
-                                "wonderful_places/pexels-pixabay-459203.jpg",
+                                "./src/assets/wonderful_places/pexels-pixabay-459203.jpg",
                             title: "Tokyo Adventure",
                             description:
                                 "Explore the vibrant culture of Tokyo with our guided city tours",
@@ -79,7 +79,7 @@ class DestinationCardManager {
                             cardDetailLink: "destinations.html#new-york",
                             cardSize: "lg",
                             imageLink:
-                                "wonderful_places/pexels-baskincreativeco-1766838.jpg",
+                                "./src/assets/wonderful_places/pexels-baskincreativeco-1766838.jpg",
                             title: "New York City Weekend Getaway",
                             description:
                                 "Experience the magic of NYC with our special weekend packages including Broadway shows and city tours",
@@ -91,7 +91,7 @@ class DestinationCardManager {
                             cardDetailLink: "destinations.html#paris",
                             cardSize: "lg",
                             imageLink:
-                                "wonderful_places/pexels-david-besh-884788.jpg",
+                                "./src/assets/wonderful_places/pexels-david-besh-884788.jpg",
                             title: "Paris Explorer Package",
                             description:
                                 "7 days in the City of Light with guided tours and Seine River cruise",
@@ -103,7 +103,7 @@ class DestinationCardManager {
                             cardDetailLink: "destinations.html#tokyo",
                             cardSize: "lg",
                             imageLink:
-                                "wonderful_places/pexels-fotios-photos-1921336.jpg",
+                                "./src/assets/wonderful_places/pexels-fotios-photos-1921336.jpg",
                             title: "Tokyo Adventure",
                             description:
                                 "Explore the vibrant culture of Tokyo with our guided city tours",
@@ -115,7 +115,7 @@ class DestinationCardManager {
                             cardDetailLink: "destinations.html#tashkent",
                             cardSize: "lg",
                             imageLink:
-                                "wonderful_places/pexels-pixabay-459203.jpg",
+                                "./src/assets/wonderful_places/pexels-pixabay-459203.jpg",
                             title: "Tokyo Adventure",
                             description:
                                 "Explore the vibrant culture of Tokyo with our guided city tours",

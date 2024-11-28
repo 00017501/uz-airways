@@ -14,7 +14,7 @@ nav {
     height: 6rem;
 }
 
-nav h1 a{
+nav h1 a {
     color: var(--primary-purple);
 }
 
@@ -40,7 +40,7 @@ main {
     height: calc(100vh - 6rem);
 }
 
-#page-content {
+.page-content {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -90,16 +90,12 @@ main {
     display: block;
 }
 
-
 /* Container for the element with negative positioning */
 .overflow-container {
     position: relative;
     width: 100%;
     overflow: hidden;
 }
-
-
-
 
 @media (max-width: 1048px) {
     .card-grid a {

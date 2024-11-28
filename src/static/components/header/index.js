@@ -11,8 +11,7 @@ export default function SectionHeader(title, keyWords, keyColor, redirectLink) {
     if (redirectLink) {
         const link = document.createElement("a");
         link.className = "d-flex align-items-center";
-        link.setAttribute("data-page-href", redirectLink);
-        link.href = "pages" + redirectLink;
+        link.href = redirectLink;
 
         const span = document.createElement("span");
         span.textContent = "All";
@@ -21,8 +20,7 @@ export default function SectionHeader(title, keyWords, keyColor, redirectLink) {
         const img = document.createElement("img");
         img.width = 25;
         img.height = 25;
-        img.setAttribute("data-src", "icons/18/GrayArrowRight.svg");
-        img.src = "assets/icons/18/GrayArrowRight.svg";
+        img.src = "./src/assets/icons/18/GrayArrowRight.svg";
         img.alt = "";
         link.appendChild(img);
 
