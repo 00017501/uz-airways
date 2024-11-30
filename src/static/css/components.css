@@ -340,6 +340,15 @@
     background-color: var(--light-purple);
 }
 
+.no-flights-message {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gray-600);
+    font-size: 1.125rem;
+    background-color: var(--primary-white);
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
 /* PRICES TABLE */
 .prices-table {
     border-collapse: separate;

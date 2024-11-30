@@ -1,6 +1,5 @@
 import Navbar from "../components/navbar/index.js";
 import SideBar from "../components/sidebar/index.js";
-import AssetPathManager from "./assetsUrlManager.js";
 /**
  * Applies utility functions to enhance button elements.
  * This function selects all the buttons in the document
@@ -58,9 +57,4 @@ export function getPageInfo() {
             return urlParams.get(param);
         },
     };
-}
-
-export function applyDynamicPaths() {
-    const dynamicUrlManager = new AssetPathManager();
-    dynamicUrlManager.execute();
 }

@@ -68,6 +68,12 @@ function formatStopsDuration(flight) {
     return flight.stopsDuration;
 }
 
+/**
+ * @function FlightsTable
+ * @description Generates an HTML table string for flights data.
+ * @param {Object} dataSet - The object containing the data for the table
+ * @returns {String} - The HTML string representing the flights table
+ */
 export function FlightsTable(dataSet) {
     let fetchedRow = "";
 
@@ -94,4 +100,37 @@ export function FlightsTable(dataSet) {
                 ${fetchedRow}
             </tbody>
         </table>`;
+}
+
+// Modified PricesTable function to work with the new data structure
+export function PricesTable(data) {
+    // Generate header row
+    const headerRow = data.columnDates.map(date => `<th>${date}</th>`).join('');
+    
+    // Generate table body rows
+    const bodyRows = data.rowDates.map((rowDate, rowIndex) => {
+        const cells = data.prices[rowIndex].map(price => 
+            `<td>$${price.toLocaleString()}</td>`
+        ).join('');
+        
+        return `
+            <tr>
+                <td>${rowDate}</td>
+                ${cells}
+            </tr>
+        `;
+    }).join('');
+
+    return `
+    <table class="prices-table">
+        <thead>
+            <tr>
+                <th></th>
+                ${headerRow}
+            </tr>
+        </thead>
+        <tbody>
+            ${bodyRows}
+        </tbody>
+    </table>`;
 }

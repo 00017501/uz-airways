@@ -4,7 +4,6 @@ import CardManager from "../../js/store/card.js";
 import Card from "../../components/card/index.js";
 import SectionHeader from "../../components/header/index.js";
 import { SpinnerLoader } from "../../components/loader/index.js";
-import AssetPathManager from "../assetsUrlManager.js";
 const cardManager = new CardManager();
 
 const addDefaultCardToDOM = () => {
@@ -17,7 +16,6 @@ const addDefaultCardToDOM = () => {
         pageContent.removeChild(loader);
 
         const { sections } = cardManager.getAllCards();
-        const assetManager = new AssetPathManager();
 
         for (let section of sections) {
             const cardsHeader = SectionHeader(
@@ -49,8 +47,6 @@ const addDefaultCardToDOM = () => {
             pageContent.appendChild(sectionWrapper);
         }
 
-        // Update paths after all cards are added
-        assetManager.execute();
     }, 3000);
 };
 

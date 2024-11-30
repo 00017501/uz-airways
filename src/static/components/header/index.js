@@ -1,5 +1,9 @@
-import AssetPathManager from "../../js/assetsUrlManager.js";
-export default function SectionHeader(title, keyWords, keyColor, redirectLink) {
+export default function SectionHeader(
+    title,
+    keyWords,
+    keyColor,
+    redirectLink = null
+) {
     const sectionHeader = document.createElement("div");
     sectionHeader.className =
         "section-header d-flex justify-content-between mt-3 mb-1";
@@ -27,9 +31,7 @@ export default function SectionHeader(title, keyWords, keyColor, redirectLink) {
         sectionHeader.appendChild(link);
     }
 
-    // Update paths immediately before returning
-    const assetManager = new AssetPathManager();
-    return assetManager.updateSectionHeader(sectionHeader);
+    return sectionHeader;
 }
 
 /**

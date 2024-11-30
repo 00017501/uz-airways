@@ -40,7 +40,7 @@ export default function SideBar() {
 
     document.body.insertAdjacentHTML("afterbegin", sideBarHTML);
 
-    function handleSideBar(event) {
+    function handleSideBar() {
         const sidebar = document.querySelector("#sidebar");
         sidebar.classList.toggle("active");
     }
