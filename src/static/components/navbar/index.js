@@ -5,7 +5,7 @@ const pageInfo = getPageInfo();
 export default function Navbar() {
     const staticNavLinks = {
         "destinations.html": "Destinations",
-        "#": "Some link",
+        "registration.html": "Registration",
         $: "Another link",
     };
 

@@ -7,105 +7,205 @@
         <link rel="stylesheet" href="../../css/main.css" />
     </head>
     <body>
-        <div class="container">
-            <form action="" id="passengerForm">
-                <h1 class="text-gradient-purple">Passenger information</h1>
-                <p class="mb-4">
-                    Enter the required information for each traveler and be sure
-                    that it exactly matches the government-issued ID presented
-                    at the airport.
-                </p>
+        <div class="p-4">
+            <div class="d-flex gap-4 container">
+                <!-- Form Column -->
+                <div class="w-100">
+                    <form action="" id="passengerForm">
+                        <h1 class="text-gradient-purple">
+                            Passenger information
+                        </h1>
+                        <p class="mb-4">
+                            Enter the required information for each traveler and
+                            be sure that it exactly matches the
+                            government-issued ID presented at the airport.
+                        </p>
 
-                <div class="mb-4">
-                    <h2 class="mb-3">Passenger</h2>
+                        <div class="mb-4">
+                            <h2 class="mb-3">Passenger</h2>
 
-                    <div class="d-flex gap-2 mb-2">
-                        <input
-                            type="text"
-                            placeholder="First name*"
-                            id="firstName"
-                            class="w-100 form-control" />
-                        <input
-                            type="text"
-                            placeholder="Last name*"
-                            id="lastName"
-                            class="w-100 form-control" />
-                    </div>
+                            <div class="d-flex gap-2 mb-2">
+                                <input
+                                    type="text"
+                                    placeholder="First name*"
+                                    id="firstName"
+                                    class="w-100 form-control" />
+                                <input
+                                    type="text"
+                                    placeholder="Last name*"
+                                    id="lastName"
+                                    class="w-100 form-control" />
+                            </div>
 
-                    <div class="d-flex gap-2 mb-2">
-                        <input
-                            type="text"
-                            placeholder="Date of birth*"
-                            id="birthDate"
-                            class="w-100 form-control" />
-                    </div>
-                    <div class="mb-2">
-                        <select
-                            name=""
-                            class="w-100 form-control"
-                            id="destinationSelect">
-                            <option value="">Select destination</option>
-                        </select>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                        <button class="btn btn-primary">Save</button>
-                    </div>
+                            <div class="d-flex gap-2 mb-2">
+                                <input
+                                    type="date"
+                                    placeholder="Date of birth*"
+                                    id="departureDate"
+                                    class="w-100 form-control" />
+                            </div>
+                            <div class="mb-2">
+                                <select
+                                    name=""
+                                    class="w-100 form-control"
+                                    id="destinationSelect">
+                                    <option value="">Select destination</option>
+                                </select>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
+
+                <!-- Visual Column -->
+                <div class="w-100">
+                    <div class="form-visual"></div>
+                </div>
+            </div>
         </div>
 
-        <div class="form-visual mt-4"></div>
-
         <script>
-            // Store the flights data in localStorage for testing
-            const flights = JSON.parse(localStorage.getItem("destinations"));
+            // DOM Elements
+            const getElements = () => {
+                return {
+                    form: document.getElementById("passengerForm"),
+                    select: document.getElementById("destinationSelect"),
+                    visual: document.querySelector(".form-visual"),
+                    firstName: document.getElementById("firstName"),
+                    lastName: document.getElementById("lastName"),
+                    departureDate: document.getElementById("departureDate"),
+                };
+            };
 
-            // Get DOM elements
-            const form = document.getElementById("passengerForm");
-            const select = document.getElementById("destinationSelect");
-            const visual = document.querySelector(".form-visual");
-            const firstName = document.getElementById("firstName");
-            const lastName = document.getElementById("lastName");
-            const birthDate = document.getElementById("birthDate");
+            // Data Management
+            const getFlightsData = () => {
+                return JSON.parse(localStorage.getItem("destinations"));
+            };
 
-            flights.sections.forEach((section) => {
-                section.cards.forEach((card) => {
-                    const option = document.createElement("option");
-                    option.value = card.title;
-                    option.textContent = card.title;
-                    select.appendChild(option);
-                });
-            });
-
-            // Update visual display
-            function updateVisual() {
-                const selectedDestination = flights.sections
+            const getSelectedDestination = (flights, selectedValue) => {
+                return flights.sections
                     .flatMap((section) => section.cards)
-                    .find((card) => card.title === select.value);
+                    .find((card) => card.title === selectedValue);
+            };
 
-                if (selectedDestination && firstName.value && lastName.value) {
-                    visual.innerHTML = `
-                    <div class="p-4" style="background: var(--purple-white); border-radius: 8px;">
-                        <h3 class="text-gradient-purple mb-2">${selectedDestination.title}</h3>
-                        <p class="mb-2">Passenger: ${firstName.value} ${lastName.value}</p>
-                        <p class="mb-2">Birth Date: ${birthDate.value}</p>
-                        <p class="mb-2">Price: $${selectedDestination.price}</p>
-                        <p class="mb-2">${selectedDestination.description}</p>
-                        <img src="${selectedDestination.imageLink}" />
-                    </div>
-                `;
-                } else {
-                    visual.innerHTML = "";
-                }
+            // Select Population
+            const populateSelectOptions = (flights, select) => {
+                flights.sections.forEach((section) => {
+                    section.cards.forEach((card) => {
+                        const option = document.createElement("option");
+                        option.value = card.title;
+                        option.textContent = card.title;
+                        select.appendChild(option);
+                    });
+                });
+            };
+
+            // HTML Generation
+            const generatePassengerDetailsHTML = (
+                firstName,
+                lastName,
+                departureDate
+            ) => {
+                if (!firstName.value && !lastName.value) return "";
+
+                return `
+        <div class="mb-3 p-3" style="background: var(--light-purple); border-radius: 8px;">
+            <h4 class="mb-2">Passenger Details</h4>
+            <p>${firstName.value} ${lastName.value}</p>
+            ${
+                departureDate.value
+                    ? `<p>Departure Date: ${departureDate.value}</p>`
+                    : ""
             }
+        </div>
+    `;
+            };
 
-            // Add event listeners
-            // Add event listeners
-            form.addEventListener("input", updateVisual); // Listen to all input changes in the form
-            select.addEventListener("change", updateVisual); // Listen specifically to select changes
+            const generateTagsHTML = (tags) => {
+                return tags
+                    .map(
+                        (tag) => `
+        <span class="p-1" style="background: var(--light-purple); border-radius: 4px;">
+            ${tag}
+        </span>
+    `
+                    )
+                    .join("");
+            };
 
-            // Initial update when page loads
-            document.addEventListener("DOMContentLoaded", updateVisual);
+            const generateDestinationHTML = (
+                destination,
+                firstName,
+                lastName,
+                departureDate
+            ) => {
+                return `
+        <div class="p-4" style="background: var(--purple-white); border-radius: 8px;">
+            <img src="${destination.imageLink}" 
+                 alt="${destination.title}" 
+                 class="mb-3 w-100" 
+                 style="border-radius: 8px; height: 200px; object-fit: cover; object-position: center;">
+            
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="text-gradient-purple">${destination.title}</h3>
+                <p class="text-gradient-purple">$${destination.price}</p>
+            </div>
+
+            ${generatePassengerDetailsHTML(firstName, lastName, departureDate)}
+            <p class="mb-3">${destination.description}</p>
+
+            <div class="d-flex gap-2">
+                ${generateTagsHTML(destination.tags)}
+            </div>
+        </div>
+    `;
+            };
+
+            const generatePlaceholderHTML = () => {
+                return `
+        <div class="p-4 d-flex justify-content-center align-items-center" 
+             style="background: var(--purple-white); border-radius: 8px; min-height: 200px;">
+            <p>Please select a destination</p>
+        </div>
+    `;
+            };
+
+            // Update Visual Display
+            const updateVisual = () => {
+                const elements = getElements();
+                const flights = getFlightsData();
+                const selectedDestination = getSelectedDestination(
+                    flights,
+                    elements.select.value
+                );
+
+                elements.visual.innerHTML = selectedDestination
+                    ? generateDestinationHTML(
+                          selectedDestination,
+                          elements.firstName,
+                          elements.lastName,
+                          elements.departureDate
+                      )
+                    : generatePlaceholderHTML();
+            };
+
+            // Event Listeners
+            const initializeEventListeners = () => {
+                const elements = getElements();
+
+                elements.form.addEventListener("input", updateVisual);
+                elements.select.addEventListener("change", updateVisual);
+                document.addEventListener("DOMContentLoaded", () => {
+                    const flights = getFlightsData();
+                    populateSelectOptions(flights, elements.select);
+                    updateVisual();
+                });
+            };
+
+            // Initialize
+            initializeEventListeners();
         </script>
     </body>
 </html>

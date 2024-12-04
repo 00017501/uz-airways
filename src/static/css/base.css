@@ -510,6 +510,10 @@ html {
     overflow: hidden;
 }
 
+.overflow-scroll {
+    overflow: scroll;
+}
+
 .overflow-ellipsis {
     white-space: nowrap;
     overflow: hidden;

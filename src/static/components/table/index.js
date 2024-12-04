@@ -87,7 +87,7 @@ export function FlightsTable(dataSet) {
     }
 
     return `
-        <table class="flights-table">
+        <table class="flights-table w-100 overflow-scroll">
             <thead>
                 <tr>
                     <th>Duration</th>
@@ -122,7 +122,7 @@ export function PricesTable(data) {
     }).join('');
 
     return `
-    <table class="prices-table">
+    <table class="prices-table w-100 overflow-scroll">
         <thead>
             <tr>
                 <th></th>
