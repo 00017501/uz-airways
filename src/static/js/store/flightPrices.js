@@ -12,11 +12,11 @@ class PricesTableManager {
         return {
             departureRange: {
                 start: "2024-02-12",
-                end: "2024-02-16"
+                end: "2024-02-16",
             },
             returnRange: {
                 start: "2024-03-07",
-                end: "2024-03-11"
+                end: "2024-03-11",
             },
             priceMatrix: [
                 {
@@ -26,8 +26,8 @@ class PricesTableManager {
                         { returnDate: "2024-03-08", price: 837 },
                         { returnDate: "2024-03-09", price: 624 },
                         { returnDate: "2024-03-10", price: 1308 },
-                        { returnDate: "2024-03-11", price: 592 }
-                    ]
+                        { returnDate: "2024-03-11", price: 592 },
+                    ],
                 },
                 {
                     departureDate: "2024-02-13",
@@ -36,8 +36,8 @@ class PricesTableManager {
                         { returnDate: "2024-03-08", price: 592 },
                         { returnDate: "2024-03-09", price: 592 },
                         { returnDate: "2024-03-10", price: 624 },
-                        { returnDate: "2024-03-11", price: 624 }
-                    ]
+                        { returnDate: "2024-03-11", price: 624 },
+                    ],
                 },
                 {
                     departureDate: "2024-02-14",
@@ -46,8 +46,8 @@ class PricesTableManager {
                         { returnDate: "2024-03-08", price: 592 },
                         { returnDate: "2024-03-09", price: 624 },
                         { returnDate: "2024-03-10", price: 624 },
-                        { returnDate: "2024-03-11", price: 1308 }
-                    ]
+                        { returnDate: "2024-03-11", price: 1308 },
+                    ],
                 },
                 {
                     departureDate: "2024-02-15",
@@ -56,8 +56,8 @@ class PricesTableManager {
                         { returnDate: "2024-03-08", price: 837 },
                         { returnDate: "2024-03-09", price: 592 },
                         { returnDate: "2024-03-10", price: 837 },
-                        { returnDate: "2024-03-11", price: 837 }
-                    ]
+                        { returnDate: "2024-03-11", price: 837 },
+                    ],
                 },
                 {
                     departureDate: "2024-02-16",
@@ -66,10 +66,10 @@ class PricesTableManager {
                         { returnDate: "2024-03-08", price: 1308 },
                         { returnDate: "2024-03-09", price: 592 },
                         { returnDate: "2024-03-10", price: 837 },
-                        { returnDate: "2024-03-11", price: 624 }
-                    ]
-                }
-            ]
+                        { returnDate: "2024-03-11", price: 624 },
+                    ],
+                },
+            ],
         };
     }
 
@@ -98,27 +98,28 @@ class PricesTableManager {
     // Get formatted data for the table
     getFormattedTableData() {
         const rawData = this.getAllPrices();
-        
+
         // Get unique departure and return dates
-        const columnDates = rawData.priceMatrix.map(day => 
+        const columnDates = rawData.priceMatrix.map((day) =>
             this.formatDate(day.departureDate)
         );
 
-        const rowDates = rawData.priceMatrix[0].prices.map(price => 
+        const rowDates = rawData.priceMatrix[0].prices.map((price) =>
             this.formatDate(price.returnDate)
         );
 
         // Create prices matrix
-        const prices = rowDates.map((returnDate, rowIndex) => 
-            columnDates.map((_, colIndex) => 
-                rawData.priceMatrix[colIndex].prices[rowIndex].price
+        const prices = rowDates.map((returnDate, rowIndex) =>
+            columnDates.map(
+                (_, colIndex) =>
+                    rawData.priceMatrix[colIndex].prices[rowIndex].price
             )
         );
 
         return {
             columnDates,
             rowDates,
-            prices
+            prices,
         };
     }
 }

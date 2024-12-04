@@ -444,3 +444,34 @@
 #close-menu:hover {
     background-color: var(--light-purple);
 }
+
+/* FOOTER STYLE */
+footer {
+    margin-top: auto;
+}
+.footer-content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.footer-content-wrapper > div {
+    grid-column: span 2 / span 2;
+}
+
+footer .column-header {
+    color: var(--gray-600);
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+footer hr {
+    width: 100%;
+    background-color: var(--gray-200) !important;
+    border: none;
+    height: 1px;
+    height: 0.5px;
+}
+
+footer .site-signature {
+    color: var(--gray-400);
+}

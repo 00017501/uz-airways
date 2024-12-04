@@ -1,5 +1,6 @@
 import Navbar from "../components/navbar/index.js";
 import SideBar from "../components/sidebar/index.js";
+import Footer from "../components/footer/index.js";
 /**
  * Applies utility functions to enhance button elements.
  * This function selects all the buttons in the document
@@ -29,6 +30,7 @@ export function useSharedComponents() {
     // Add side bar and navbar to the top of the body element
     Navbar();
     SideBar();
+    Footer();
 }
 
 /**

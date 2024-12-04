@@ -71,7 +71,7 @@ class DestinationCardManager {
                 {
                     title: "Explore unique places to stay",
                     keyWords: "places to stay",
-                    redirectLink: "/unique-destinations",
+                    redirectLink: "/destinations.html",
                     keyColor: "green",
                     cards: [
                         {
@@ -136,27 +136,7 @@ class DestinationCardManager {
         );
     }
 
-    // CREATE
-    createCard(cardData) {
-        try {
-            const cards = this.getAllCards();
-            const newCard = {
-                id: `dest-${Date.now()}`,
-                cardSize: "lg", // default size
-                ...cardData,
-                createdAt: Date.now(),
-            };
 
-            cards.push(newCard);
-            localStorage.setItem(this.storageKey, JSON.stringify(cards));
-            return newCard;
-        } catch (error) {
-            console.error("Error creating card:", error);
-            throw error;
-        }
-    }
-
-    // READ
     getAllCards() {
         try {
             return JSON.parse(localStorage.getItem(this.storageKey) || "{}");
@@ -165,135 +145,6 @@ class DestinationCardManager {
             return {};
         }
     }
-
-    getCardById(id) {
-        try {
-            const cards = this.getAllCards();
-            return cards.find((card) => card.id === id);
-        } catch (error) {
-            console.error("Error getting card:", error);
-            return null;
-        }
-    }
-
-    // UPDATE
-    updateCard(id, updates) {
-        try {
-            const cards = this.getAllCards();
-            const index = cards.findIndex((card) => card.id === id);
-
-            if (index === -1) {
-                throw new Error("Card not found");
-            }
-
-            cards[index] = {
-                ...cards[index],
-                ...updates,
-                updatedAt: Date.now(),
-            };
-
-            localStorage.setItem(this.storageKey, JSON.stringify(cards));
-            return cards[index];
-        } catch (error) {
-            console.error("Error updating card:", error);
-            throw error;
-        }
-    }
-
-    // DELETE
-    deleteCard(id) {
-        try {
-            const cards = this.getAllCards();
-            const filteredCards = cards.filter((card) => card.id !== id);
-            localStorage.setItem(
-                this.storageKey,
-                JSON.stringify(filteredCards)
-            );
-            return true;
-        } catch (error) {
-            console.error("Error deleting card:", error);
-            throw error;
-        }
-    }
-
-    // QUERY methods
-    getCardsByPriceRange(minPrice, maxPrice) {
-        try {
-            const cards = this.getAllCards();
-            return cards.filter(
-                (card) => card.price >= minPrice && card.price <= maxPrice
-            );
-        } catch (error) {
-            console.error("Error querying cards:", error);
-            return [];
-        }
-    }
-
-    getCardsByTag(tag) {
-        try {
-            const cards = this.getAllCards();
-            return cards.filter((card) => card.tags && card.tags.includes(tag));
-        } catch (error) {
-            console.error("Error querying cards:", error);
-            return [];
-        }
-    }
-
-    // Reset to default cards
-    resetToDefault() {
-        try {
-            this.initializeDefaultCards();
-            return this.getAllCards();
-        } catch (error) {
-            console.error("Error resetting cards:", error);
-            throw error;
-        }
-    }
-
-    // Clear all cards
-    clearAll() {
-        try {
-            localStorage.removeItem(this.storageKey);
-            return true;
-        } catch (error) {
-            console.error("Error clearing cards:", error);
-            throw error;
-        }
-    }
 }
-
-// Usage examples:
-/*
-   const cardManager = new DestinationCardManager();
-   
-   // Get all cards
-   const allCards = cardManager.getAllCards();
-   
-   // Create a new card
-   const newCard = cardManager.createCard({
-    cardDetailLink: "/flights/dubai",
-    imageLink: "https://example.com/images/dubai.jpg",
-    title: "Dubai Luxury Experience",
-    description: "5-star luxury experience in Dubai",
-    price: 1299.99,
-    tags: ["Luxury", "New"]
-   });
-   
-   // Update a card
-   const updatedCard = cardManager.updateCard('dest-001', {
-    price: 349.99,
-    description: "Updated description"
-   });
-   
-   // Delete a card
-   cardManager.deleteCard('dest-001');
-   
-   // Query cards
-   const affordableCards = cardManager.getCardsByPriceRange(0, 500);
-   const featuredCards = cardManager.getCardsByTag('Featured');
-   
-   // Reset to default
-   cardManager.resetToDefault();
-   */
 
 export default DestinationCardManager;

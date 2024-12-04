@@ -52,6 +52,8 @@ ol[role="list"] {
 body {
     min-height: 100vh;
     line-height: 1.5;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -216,9 +218,16 @@ html {
 .justify-content-between {
     justify-content: space-between;
 }
+.justify-content-end {
+    justify-content: end;
+}
 
 .align-items-center {
     align-items: center;
+}
+
+.align-items-end {
+    align-items: end;
 }
 
 .vertical-align-top {
@@ -509,4 +518,8 @@ html {
 
 .text-start {
     text-align: start;
+}
+
+.text-end {
+    text-align: end;
 }

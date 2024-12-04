@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="../../css/main.css" />
-    </head>
-    <body>
-        <footer class="d-flex flex-column pt-5">
+export default function Footer() {
+    const footerHTML = `
+    <footer class="d-flex flex-column pt-5">
             <div class="container-xl">
                 <div class="footer-content-wrapper">
                     <div class="d-flex flex-column">
@@ -79,10 +72,11 @@
             </div>
             <hr class="mt-4" />
             <div class="container-xl">
-                <div class="pt-3 pb-3 text-end pe-4">
+                <div class="pt-3 pb-3 text-end pe-4 site-signature">
                     © 2024 Uz Airways incorporated
                 </div>
             </div>
-        </footer>
-    </body>
-</html>
+        </footer>`;
+
+    document.body.insertAdjacentHTML("beforeend", footerHTML);
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Passenger Form</title>
+        <link rel="stylesheet" href="../../css/main.css" />
+    </head>
+    <body>
+        <div class="container">
+            <form action="" id="passengerForm">
+                <h1 class="text-gradient-purple">Passenger information</h1>
+                <p class="mb-4">
+                    Enter the required information for each traveler and be sure
+                    that it exactly matches the government-issued ID presented
+                    at the airport.
+                </p>
+
+                <div class="mb-4">
+                    <h2 class="mb-3">Passenger</h2>
+
+                    <div class="d-flex gap-2 mb-2">
+                        <input
+                            type="text"
+                            placeholder="First name*"
+                            id="firstName"
+                            class="w-100 form-control" />
+                        <input
+                            type="text"
+                            placeholder="Last name*"
+                            id="lastName"
+                            class="w-100 form-control" />
+                    </div>
+
+                    <div class="d-flex gap-2 mb-2">
+                        <input
+                            type="text"
+                            placeholder="Date of birth*"
+                            id="birthDate"
+                            class="w-100 form-control" />
+                    </div>
+                    <div class="mb-2">
+                        <select
+                            name=""
+                            class="w-100 form-control"
+                            id="destinationSelect">
+                            <option value="">Select destination</option>
+                        </select>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-visual mt-4"></div>
+
+        <script>
+            // Store the flights data in localStorage for testing
+            const flights = JSON.parse(localStorage.getItem("destinations"));
+
+            // Get DOM elements
+            const form = document.getElementById("passengerForm");
+            const select = document.getElementById("destinationSelect");
+            const visual = document.querySelector(".form-visual");
+            const firstName = document.getElementById("firstName");
+            const lastName = document.getElementById("lastName");
+            const birthDate = document.getElementById("birthDate");
+
+            flights.sections.forEach((section) => {
+                section.cards.forEach((card) => {
+                    const option = document.createElement("option");
+                    option.value = card.title;
+                    option.textContent = card.title;
+                    select.appendChild(option);
+                });
+            });
+
+            // Update visual display
+            function updateVisual() {
+                const selectedDestination = flights.sections
+                    .flatMap((section) => section.cards)
+                    .find((card) => card.title === select.value);
+
+                if (selectedDestination && firstName.value && lastName.value) {
+                    visual.innerHTML = `
+                    <div class="p-4" style="background: var(--purple-white); border-radius: 8px;">
+                        <h3 class="text-gradient-purple mb-2">${selectedDestination.title}</h3>
+                        <p class="mb-2">Passenger: ${firstName.value} ${lastName.value}</p>
+                        <p class="mb-2">Birth Date: ${birthDate.value}</p>
+                        <p class="mb-2">Price: $${selectedDestination.price}</p>
+                        <p class="mb-2">${selectedDestination.description}</p>
+                        <img src="${selectedDestination.imageLink}" />
+                    </div>
+                `;
+                } else {
+                    visual.innerHTML = "";
+                }
+            }
+
+            // Add event listeners
+            // Add event listeners
+            form.addEventListener("input", updateVisual); // Listen to all input changes in the form
+            select.addEventListener("change", updateVisual); // Listen specifically to select changes
+
+            // Initial update when page loads
+            document.addEventListener("DOMContentLoaded", updateVisual);
+        </script>
+    </body>
+</html>
