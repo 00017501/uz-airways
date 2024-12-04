@@ -6,7 +6,7 @@ export default function SideBar() {
     const staticNavLinks = {
         "destinations.html": "Destinations",
         "registration.html": "Registration",
-        "##": "Another link",
+        "booking.html": "Booking",
     };
 
     let linkListItems = ``;

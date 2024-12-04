@@ -19,7 +19,8 @@ class DestinationCardManager {
                     cards: [
                         {
                             id: "1",
-                            cardDetailLink: "destinations.html#new-york",
+                            cardDetailLink:
+                                "destinations.html#amsterdam-netherlands",
                             cardSize: "lg",
                             imageLink:
                                 "https://media.cntraveler.com/photos/5fc6818f3cfe1de2cab79372/16:9/w_2580%2Cc_limit/Amsterdam-GettyImages-840603854.jpg",
@@ -31,7 +32,7 @@ class DestinationCardManager {
                         },
                         {
                             id: "2",
-                            cardDetailLink: "destinations.html#paris",
+                            cardDetailLink: "destinations.html#barcelona-spain",
                             cardSize: "lg",
                             imageLink:
                                 "https://media.cntraveler.com/photos/5ca50f2719fc38d59c1a31b4/master/w_2580%2Cc_limit/Barcelona_GettyImages-720036297.jpg",
@@ -43,7 +44,7 @@ class DestinationCardManager {
                         },
                         {
                             id: "3",
-                            cardDetailLink: "destinations.html#tokyo",
+                            cardDetailLink: "destinations.html#beijing-china",
                             cardSize: "lg",
                             imageLink:
                                 "https://media.cntraveler.com/photos/5fd0dee324d6251eeb2e5ec7/master/w_2580%2Cc_limit/BestCitiesInTheWorld-2020-Beijing%2C%2520China-GettyImages-700672514.jpg",
@@ -55,7 +56,7 @@ class DestinationCardManager {
                         },
                         {
                             id: "4",
-                            cardDetailLink: "destinations.html#tashkent",
+                            cardDetailLink: "destinations.html#beirut-lebanon",
                             cardSize: "lg",
                             imageLink:
                                 "https://media.cntraveler.com/photos/5ca50f277b531a543d949ccb/master/w_2580%2Cc_limit/Beirut_GettyImages-626502584.jpg",
@@ -76,7 +77,7 @@ class DestinationCardManager {
                     cards: [
                         {
                             id: "1",
-                            cardDetailLink: "destinations.html#new-york",
+                            cardDetailLink: "destinations.html#bergen-norway",
                             cardSize: "lg",
                             imageLink:
                                 "https://media.cntraveler.com/photos/5fd0dee83cfe1de2cab7953a/master/w_2580%2Cc_limit/BestCitiesInTheWorld-2020-Bergen%2C%2520Norway-GettyImages-1169113458.jpg",
@@ -88,7 +89,7 @@ class DestinationCardManager {
                         },
                         {
                             id: "2",
-                            cardDetailLink: "destinations.html#paris",
+                            cardDetailLink: "destinations.html#bruges-belgium",
                             cardSize: "lg",
                             imageLink:
                                 "https://media.cntraveler.com/photos/588a0a4fbc3623e22c9e89de/master/w_2580%2Cc_limit/bruges-Gallery-Stock-GS01079498.jpg",
@@ -100,7 +101,8 @@ class DestinationCardManager {
                         },
                         {
                             id: "3",
-                            cardDetailLink: "destinations.html#tokyo",
+                            cardDetailLink:
+                                "destinations.html#budapest-hungary",
                             cardSize: "lg",
                             imageLink:
                                 "https://media.cntraveler.com/photos/5bd0cb986965116f2b13ad94/master/w_2580%2Cc_limit/Budapest_GettyImages-96169945.jpg",
@@ -112,7 +114,8 @@ class DestinationCardManager {
                         },
                         {
                             id: "4",
-                            cardDetailLink: "destinations.html#tashkent",
+                            cardDetailLink:
+                                "destinations.html#buenos-aires-argentina",
                             cardSize: "lg",
                             imageLink:
                                 "https://media.cntraveler.com/photos/5fc66ede013df4de80687b39/master/w_2580%2Cc_limit/Buenos-Aires-GettyImages-1129443180.jpg",
@@ -135,7 +138,6 @@ class DestinationCardManager {
             JSON.stringify(this.getDefaultCards())
         );
     }
-
 
     getAllCards() {
         try {

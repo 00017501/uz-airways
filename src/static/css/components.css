@@ -475,3 +475,15 @@ footer hr {
 footer .site-signature {
     color: var(--gray-400);
 }
+.destinations-gallery {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.destinations-gallery div {
+    grid-column: span 12 / span 12;
+}
+
+.destinations-gallery .card.card-lg .card-image-wrapper {
+    height: 70vh;
+  }
