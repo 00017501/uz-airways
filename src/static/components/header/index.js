@@ -15,7 +15,7 @@ export default function SectionHeader(
     if (redirectLink) {
         const link = document.createElement("a");
         link.className = "d-flex align-items-center";
-        link.href = redirectLink;
+        link.href = "https://00017501.github.io/uz-airways" + redirectLink;
 
         const span = document.createElement("span");
         span.textContent = "All";

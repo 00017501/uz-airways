@@ -13,7 +13,7 @@ export default function Card(
 ) {
     const cardWrapper = document.createElement("div");
     cardWrapper.innerHTML = `
-        <a href="/${cardDetailLink}">
+        <a href="https://00017501.github.io/uz-airways/${cardDetailLink}">
             <figure class="card card-image-top card-${cardSize || "lg"}">
                 <div class="card-image-wrapper">
                     <img
