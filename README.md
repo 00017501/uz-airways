@@ -24,4 +24,4 @@ The projects aims to build a user-friendly UI interface for the Uzbekistan Airwa
 
 ### Future plans:
 
--   As of current, the data in the project is status, and the Backend integration is required.
+-   As of current, the data in the project is static, and the Backend integration is required.
