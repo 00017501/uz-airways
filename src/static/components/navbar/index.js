@@ -4,9 +4,9 @@ const pageInfo = getPageInfo();
 
 export default function Navbar() {
     const staticNavLinks = {
-        "booking.html": "Booking",
-        "destinations.html": "Destinations",
-        "registration.html": "Registration",
+        "booking": "Booking",
+        "destinations": "Destinations",
+        "registration": "Registration",
     };
 
     let linkListItems = ``;

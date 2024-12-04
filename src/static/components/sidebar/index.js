@@ -4,9 +4,9 @@ const pageInfo = getPageInfo();
 
 export default function SideBar() {
     const staticNavLinks = {
-        "destinations.html": "Destinations",
-        "registration.html": "Registration",
-        "booking.html": "Booking",
+        "destinations": "Destinations",
+        "registration": "Registration",
+        "booking": "Booking",
     };
 
     let linkListItems = ``;

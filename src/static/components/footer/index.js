@@ -12,7 +12,7 @@ export default function Footer() {
                                 <span class="column-header">About</span>
                             </li>
                             <li>
-                                <a class="link" href="destinations.html"
+                                <a class="link" href="destinations"
                                     >Destinations</a
                                 >
                             </li>
@@ -29,7 +29,7 @@ export default function Footer() {
                                 >
                             </li>
                             <li>
-                                <a class="link" href="destinations.html"
+                                <a class="link" href="destinations"
                                     >Partnership programs</a
                                 >
                             </li>
@@ -44,7 +44,7 @@ export default function Footer() {
                                 <span class="column-header">Support</span>
                             </li>
                             <li>
-                                <a class="link" href="destinations.html"
+                                <a class="link" href="destinations"
                                     >Destinations</a
                                 >
                             </li>
@@ -59,7 +59,7 @@ export default function Footer() {
                                 <span class="column-header">Get the app</span>
                             </li>
                             <li>
-                                <a class="link" href="destinations.html"
+                                <a class="link" href="destinations"
                                     >Destinations</a
                                 >
                             </li>

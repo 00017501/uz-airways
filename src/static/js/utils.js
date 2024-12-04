@@ -40,7 +40,7 @@ export function getPageInfo() {
     const locationInfo = {
         fullUrl: window.location.href, // Complete URL
         pathname: window.location.pathname, // Path without domain
-        page: window.location.pathname.split("/").pop() || "index.html", // Current page name
+        page: window.location.pathname.split("/").pop() || "index", // Current page name
         hash: window.location.hash, // URL hash/fragment
         search: window.location.search, // Query parameters
         hostname: window.location.hostname, // Domain name

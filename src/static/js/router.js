@@ -7,11 +7,11 @@ import RegistrationPage from "./pages/registration.js";
 export function useRouter() {
     const pageInfo = getPageInfo();
 
-    if (pageInfo.isPage("index.html")) {
+    if (pageInfo.isPage("/") || pageInfo.isPage("index")) {
         WelcomePage();
-    } else if (pageInfo.isPage("destinations.html")) {
+    } else if (pageInfo.isPage("destinations")) {
         DestinationsPage();
-    } else if (pageInfo.isPage("registration.html")) {
+    } else if (pageInfo.isPage("registration")) {
         RegistrationPage();
     } else if (pageInfo.isPage("booking.html")) {
         BookingPage();
