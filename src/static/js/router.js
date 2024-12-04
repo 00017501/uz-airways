@@ -13,7 +13,7 @@ export function useRouter() {
         DestinationsPage();
     } else if (pageInfo.isPage("registration")) {
         RegistrationPage();
-    } else if (pageInfo.isPage("booking.html")) {
+    } else if (pageInfo.isPage("booking")) {
         BookingPage();
     }
 }
