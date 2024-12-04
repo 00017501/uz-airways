@@ -4,9 +4,9 @@ const pageInfo = getPageInfo();
 
 export default function Navbar() {
     const staticNavLinks = {
+        "booking.html": "Booking",
         "destinations.html": "Destinations",
         "registration.html": "Registration",
-        "booking.html": "Booking",
     };
 
     let linkListItems = ``;
@@ -35,7 +35,7 @@ export default function Navbar() {
             <ul class="d-flex gap-1 align-items-center">
                 ${linkListItems}
                 <li>
-                    <button class="btn btn-primary btn-md">Sign Up</button>
+                    <button class="btn btn-primary btn-md">Book</button>
                 </li>
                 <li></li>
             </ul>

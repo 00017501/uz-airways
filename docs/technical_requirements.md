@@ -1,1 +1,0 @@
-# Technical requirements of the project
