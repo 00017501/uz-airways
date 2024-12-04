@@ -27,7 +27,7 @@ export default function Navbar() {
         <div
             class="container d-flex justify-content-between align-items-center">
             <h1>
-            <a href="index.html">Uz Airways</a>
+            <a href="https://00017501.github.io/uz-airways">Uz Airways</a>
             </h1>
             <button id="burger-menu">
                 <img src="./src/assets/icons/32/menu.svg" alt="" />
